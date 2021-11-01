@@ -1,0 +1,23 @@
+.services-card{
+    width: 282px;
+    height: 408px;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+}
+
+.cardd-title{
+    position:absolute; 
+    margin-top: -250px;
+    overflow: hidden;
+    color: white;
+    border-radius: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.feature-tour{
+    margin-top: 200px;
+}

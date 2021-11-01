@@ -1,0 +1,10 @@
+.header-container{
+    background: url('../../Images/Header.png');
+    background-repeat: no-repeat;
+    height:1000px;
+    background-size: cover;
+}
+
+@media screen and (max-width: 500px){
+
+}
