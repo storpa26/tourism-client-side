@@ -6,6 +6,9 @@ import HomePage from './Pages/HomePage/HomePage';
 import Login from './Pages/Login/Login/Login';
 import NavBar from './Pages/NavBar/NavBar';
 import Services from './Pages/Services/Services';
+import OrderPage from './Pages/OrderPage/OrderPage';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import AddService from './Pages/AddService/AddService';
 
 function App() {
   return (
@@ -29,6 +32,14 @@ function App() {
             <NavBar></NavBar>
             <Services></Services>
           </Route>
+          <PrivateRoute exact path="/services/:id">
+            <NavBar></NavBar>
+            <OrderPage></OrderPage>
+          </PrivateRoute>
+          <PrivateRoute exact path="/addservice">
+            <NavBar></NavBar>
+            <AddService></AddService>
+          </PrivateRoute>
         </Switch>
 
       </BrowserRouter>

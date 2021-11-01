@@ -1,0 +1,13 @@
+.order-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.order-form input{
+    width: 40%;
+    margin-top: 20px;
+}
