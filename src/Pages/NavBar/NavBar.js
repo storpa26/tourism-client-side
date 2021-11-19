@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import React from 'react';
 import useAuth from "../../hooks/useAuth";
 import AdminDashBoard from "../Admin/AdminDashBoard/AdminDashBoard";
-
+import UserDashBoard from "../Login/UserDashBoard/UserDashBoard";
+import "./NavBar.css"
 
 
 const NavBar = () => {
@@ -16,6 +17,19 @@ const NavBar = () => {
                     <Navbar.Brand className="text-white" href="#">Travelopia</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
+
+                        {user?.email &&
+                            <div>
+                                <div className="mx-2 my-2">
+                                    <UserDashBoard></UserDashBoard>
+                                </div>
+                                <div className="mx-2 my-2">
+                                    <AdminDashBoard></AdminDashBoard>
+                                </div>
+                            </div>
+
+                        }
+
                         <Nav
                             className="me-auto my-2 my-lg-0"
                             style={{ maxHeight: '100px' }}
@@ -32,14 +46,14 @@ const NavBar = () => {
                                 marginRight: "20px"
 
                             }}>Services</NavLink>
-                            <NavLink to="/book" style={{
+                            <NavLink to="/about" style={{
                                 textDecoration: "none",
                                 color: "white",
                                 marginRight: "20px"
 
-                            }}>Book</NavLink>
+                            }}>About Us</NavLink>
 
-                            <AdminDashBoard></AdminDashBoard>
+
 
                         </Nav>
 
@@ -55,7 +69,7 @@ const NavBar = () => {
                             {user?.email ?
                                 <button className="btn btn-success mt-2" onClick={logOut}>Logout</button> :
                                 <NavLink to="/login">
-                                    <Button variant="btn outline-success">Log in</Button>
+                                    <Button variant="btn btn-success">Log in</Button>
                                 </NavLink>
                             }
 

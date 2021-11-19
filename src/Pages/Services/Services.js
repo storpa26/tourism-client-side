@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 const Services = () => {
-
+    const { isLoading } = useAuth();
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('https://aqueous-lake-21944.herokuapp.com/services')
@@ -14,7 +15,7 @@ const Services = () => {
 
     return (
         <Container className="my-3">
-            <div>
+            {!isLoading && <div>
                 <h1 className="text-center fw-bolder">Featured Tour Places</h1>
                 <Row className="mx-auto g-4 my-2">
                     {
@@ -50,7 +51,12 @@ const Services = () => {
                         })
                     }
                 </Row>
-            </div>
+            </div>}
+            {
+                isLoading && <div className="d-flex justify-content-center "> <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner></div>
+            }
         </Container >
     );
 };

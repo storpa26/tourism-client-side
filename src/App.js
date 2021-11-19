@@ -13,6 +13,8 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import AddService from './Pages/Admin/AddService/AddService';
 import ManageAllOrders from './Pages/Admin/ManageAllOrders/ManageAllOrders';
+import Footer from './Pages/Footer/Footer';
+import About from './Pages/About/About';
 
 function App() {
   return (
@@ -24,34 +26,55 @@ function App() {
             <Route exact path="/home">
               <Header></Header>
               <HomePage></HomePage>
+              <Footer></Footer>
             </Route>
             <Route exact path="/">
               <Header></Header>
               <HomePage></HomePage>
+              <Footer></Footer>
+
             </Route>
             <Route exact path="/login">
               <NavBar></NavBar>
               <Login></Login>
+              <Footer></Footer>
+
             </Route>
             <Route exact path="/services">
               <NavBar></NavBar>
               <Services></Services>
+              <Footer></Footer>
+
+            </Route>
+            <Route exact path="/about">
+              <NavBar></NavBar>
+              <About></About>
+              <Footer></Footer>
+
             </Route>
             <PrivateRoute exact path="/services/:id">
               <NavBar></NavBar>
               <OrderPage></OrderPage>
+              <Footer></Footer>
+
             </PrivateRoute>
             <PrivateRoute exact path="/manageallorders">
               <NavBar></NavBar>
               <ManageAllOrders></ManageAllOrders>
+              <Footer></Footer>
+
             </PrivateRoute>
             <PrivateRoute exact path="/addservice">
               <NavBar></NavBar>
               <AddService></AddService>
+              <Footer></Footer>
+
             </PrivateRoute>
             <PrivateRoute exact path="/myorders">
               <NavBar></NavBar>
               <MyOrders></MyOrders>
+              <Footer></Footer>
+
             </PrivateRoute>
           </Switch>
 

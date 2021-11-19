@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     height:1000px;
     background-size: cover;
+    overflow: visible;
 }
 
 @media screen and (max-width: 500px){

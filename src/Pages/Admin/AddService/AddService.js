@@ -8,6 +8,7 @@ const AddService = () => {
         console.log(data)
         axios.post('https://aqueous-lake-21944.herokuapp.com/services', data)
             .then(res => {
+                alert('Added Successfully!');
                 console.log(res);
             })
     }

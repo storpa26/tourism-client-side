@@ -31,6 +31,7 @@ const OrderPage = () => {
 
         axios.post('https://aqueous-lake-21944.herokuapp.com/orders', userOrder)
             .then(res => {
+                alert('Ordered Successfully!');
                 console.log(res);
             })
     }
@@ -45,6 +46,7 @@ const OrderPage = () => {
                             <Card.Title className="my-0 fw-bold px-3 py-4">
                                 <p className="cardd-title">{singleItem.title}</p>
                             </Card.Title>
+                            <p className="px-2">{singleItem.about}</p>
                             <Card.Text className="px-3 d-flex justify-content-between">
                                 <div>
                                     <p><span className="text-secondary"><FontAwesomeIcon icon={faClock} /></span> 7 Days/6 Nights</p>

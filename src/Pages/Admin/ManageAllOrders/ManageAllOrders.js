@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = id => {
 
         window.confirm('Are you sure you want to cancel this order?');
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`http://localhost:5000/orders}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
