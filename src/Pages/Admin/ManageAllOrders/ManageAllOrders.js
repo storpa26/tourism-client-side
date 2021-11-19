@@ -11,11 +11,10 @@ const ManageAllOrders = () => {
             .then(data => setAllOrders(data))
     }, [])
 
-
     const handleDeleteOrder = id => {
 
         window.confirm('Are you sure you want to cancel this order?');
-        fetch(`https://aqueous-lake-21944.herokuapp.com/orders/${id}}`, {
+        fetch(`https://aqueous-lake-21944.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
