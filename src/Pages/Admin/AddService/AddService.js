@@ -15,11 +15,11 @@ const AddService = () => {
         <div>
             <h1 className="fw-bold text-center my-4">Add a service</h1>
             <form className="order-form" onSubmit={handleSubmit(onSubmit)}>
-                <input value="Place Name" {...register("title")} />
+                <input placeholder="Place Name" {...register("title")} />
 
-                <input value="description" {...register("about")} />
+                <input placeholder="description" {...register("about")} />
 
-                <input type="number" placeholder="price" {...register("address")} />
+                <input type="number" placeholder="price" {...register("price")} />
                 <input placeholder="img url" {...register("imgURL")} />
 
                 <input type="submit" />

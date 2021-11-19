@@ -2,10 +2,12 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import React from 'react';
 import useAuth from "../../hooks/useAuth";
-import useFirebase from "../../hooks/useFirebase";
+import AdminDashBoard from "../Admin/AdminDashBoard/AdminDashBoard";
+
+
 
 const NavBar = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
 
     return (
         <div className="bg-dark">
@@ -36,7 +38,11 @@ const NavBar = () => {
                                 marginRight: "20px"
 
                             }}>Book</NavLink>
+
+                            <AdminDashBoard></AdminDashBoard>
+
                         </Nav>
+
                         {
                             user?.email ? <div className="d-flex mx-3 mt-2">
                                 <p className="text-white p-1 mx-2">Logged in as</p>

@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Spinner, Table, Button } from 'react-bootstrap';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 
-const MyOrders = () => {
-    const { user, isLoading } = useAuth();
-
-    const [myOrders, setmyOrders] = useState([])
-
+const ManageAllOrders = () => {
+    const [allOrders, setAllOrders] = useState([]);
+    const { isLoading } = useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/filteredorders?email=${user.email}`)
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
-            .then(data => {
-                setmyOrders(data)
-            }
-            );
-    }, [user.email])
+            .then(data => setAllOrders(data))
+    }, [])
 
 
-    //cancel an order
     const handleDeleteOrder = id => {
 
         window.confirm('Are you sure you want to cancel this order?');
@@ -28,12 +22,11 @@ const MyOrders = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     alert('Deleted Successfully!');
-                    const remaining = myOrders.filter(order => order._id !== id)
-                    setmyOrders(remaining)
+                    const remaining = allOrders.filter(order => order._id !== id)
+                    setAllOrders(remaining)
                 }
             })
     }
-
     return (
         <Container>
             <h1 className="fw-bold text-center my-5">Your Orders</h1>
@@ -54,7 +47,7 @@ const MyOrders = () => {
                             </tr>
                         </thead>
                         {
-                            myOrders?.map(order => {
+                            allOrders?.map(order => {
                                 return (
                                     <tbody key={order._id} style={{ fontWeight: "500" }}>
                                         <tr>
@@ -64,7 +57,7 @@ const MyOrders = () => {
                                             <td>{order.price}</td>
                                             <td>{order.phone}</td>
                                             <td>{`${order.status ? order.status : 'Pending'}`}</td>
-                                            <td> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger">Cancel</Button> </td>
+                                            <td> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger">Delete</Button> </td>
                                         </tr>
                                     </tbody>
                                 )
@@ -76,6 +69,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
-
-
+export default ManageAllOrders;

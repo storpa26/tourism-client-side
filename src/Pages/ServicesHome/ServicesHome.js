@@ -24,7 +24,10 @@ const ServicesHome = () => {
                                         <Card.Img src={service.imgURL} height="250" width="500" />
                                         <Card.Title className="my-0 fw-bold px-3 py-4">
                                             <p className="cardd-title">{service.title}</p>
+
                                         </Card.Title>
+                                        <p className="px-2 m-0">{service.about}</p>
+                                        <br />
                                         <Card.Text className="px-3 d-flex justify-content-between">
                                             <div>
                                                 <p><span className="text-secondary"><FontAwesomeIcon icon={faClock} /></span> 7 Days/6 Nights</p>
@@ -35,7 +38,7 @@ const ServicesHome = () => {
                                         </Card.Text>
                                         <Link to={`/services/${service._id}`}>
                                             <button className="mx-3 btn btn-secondary">
-                                                See Details
+                                                Book Now
                                             </button>
                                         </Link>
                                     </Card>

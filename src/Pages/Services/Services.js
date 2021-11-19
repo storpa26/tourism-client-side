@@ -18,16 +18,21 @@ const Services = () => {
                 <h1 className="text-center fw-bolder">Featured Tour Places</h1>
                 <Row className="mx-auto g-4 my-2">
                     {
-                        services.slice(2, 6).map(service => {
+                        services.map(service => {
                             return (
                                 <Col key={service._id} className="mx-auto" lg={3} xs={12}>
                                     <Card className="p-0 services-card">
                                         <Card.Img src={service.imgURL} height="250" width="500" />
-                                        <Card.Title className="my-0 fw-bold px-3 py-4">
+                                        <Card.Title className="my-0 px-3 fw-bolder py-4">
                                             <p className="cardd-title">{service.title}</p>
+
                                         </Card.Title>
+                                        <p className="px-2 m-0">{service.about}</p>
+                                        <br />
                                         <Card.Text className="px-3 d-flex justify-content-between">
+
                                             <div>
+
                                                 <p><span className="text-secondary"><FontAwesomeIcon icon={faClock} /></span> 7 Days/6 Nights</p>
                                             </div>
                                             <div>
@@ -46,7 +51,7 @@ const Services = () => {
                     }
                 </Row>
             </div>
-        </Container>
+        </Container >
     );
 };
 
