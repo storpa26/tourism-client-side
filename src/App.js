@@ -16,6 +16,7 @@ import ManageAllOrders from './Pages/Admin/ManageAllOrders/ManageAllOrders';
 import Footer from './Pages/Footer/Footer';
 import About from './Pages/About/About';
 import Reviews from './Pages/Reviews/Reviews';
+import SeeAllOrders from './Pages/SeeAllOrders/SeeAllOrders';
 
 function App() {
   return (
@@ -68,6 +69,12 @@ function App() {
             <PrivateRoute exact path="/manageallorders">
               <NavBar></NavBar>
               <ManageAllOrders></ManageAllOrders>
+              <Footer></Footer>
+
+            </PrivateRoute>
+            <PrivateRoute exact path="/seeallorders">
+              <NavBar></NavBar>
+              <SeeAllOrders></SeeAllOrders>
               <Footer></Footer>
 
             </PrivateRoute>

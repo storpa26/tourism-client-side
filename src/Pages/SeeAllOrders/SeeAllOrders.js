@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Spinner, Table, Button } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+import { Container, Spinner, Table } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 
-const ManageAllOrders = () => {
+const SeeAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const { isLoading } = useAuth();
     useEffect(() => {
@@ -11,21 +11,7 @@ const ManageAllOrders = () => {
             .then(data => setAllOrders(data))
     }, [])
 
-    const handleDeleteOrder = id => {
 
-        window.confirm('Are you sure you want to cancel this order?');
-        fetch(`https://aqueous-lake-21944.herokuapp.com/orders/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Deleted Successfully!');
-                    const remaining = allOrders.filter(order => order._id !== id)
-                    setAllOrders(remaining)
-                }
-            })
-    }
     return (
         <Container>
             <h1 className="fw-bold text-center my-5">Your Orders</h1>
@@ -42,7 +28,6 @@ const ManageAllOrders = () => {
                                 <th>Price</th>
                                 <th>Phone</th>
                                 <th>Status</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         {
@@ -56,7 +41,7 @@ const ManageAllOrders = () => {
                                             <td>{order.price}</td>
                                             <td>{order.phone}</td>
                                             <td>Pending</td>
-                                            <td> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger">Delete</Button> </td>
+
                                         </tr>
                                     </tbody>
                                 )
@@ -68,4 +53,4 @@ const ManageAllOrders = () => {
     );
 };
 
-export default ManageAllOrders;
+export default SeeAllOrders;

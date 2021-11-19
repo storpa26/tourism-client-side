@@ -13,7 +13,7 @@ const UserDashBoard = () => {
                         <NavLink className="nav-items my-2" to="/myorders" style={isActive => ({
                             color: isActive ? "green" : "blue"
                         })}>My Orders</NavLink>
-                        <NavLink className="nav-items my-2" to="/manageallorders" style={isActive => ({
+                        <NavLink className="nav-items my-2" to="/seeallorders" style={isActive => ({
                             color: isActive ? "green" : "blue"
                         })}>Manage All Orders</NavLink>
                         <NavLink className="nav-items my-2" to="/addservice" style={isActive => ({
