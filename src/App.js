@@ -15,6 +15,7 @@ import AddService from './Pages/Admin/AddService/AddService';
 import ManageAllOrders from './Pages/Admin/ManageAllOrders/ManageAllOrders';
 import Footer from './Pages/Footer/Footer';
 import About from './Pages/About/About';
+import Reviews from './Pages/Reviews/Reviews';
 
 function App() {
   return (
@@ -49,6 +50,12 @@ function App() {
             <Route exact path="/about">
               <NavBar></NavBar>
               <About></About>
+              <Footer></Footer>
+
+            </Route>
+            <Route exact path="/reviews">
+              <NavBar></NavBar>
+              <Reviews></Reviews>
               <Footer></Footer>
 
             </Route>

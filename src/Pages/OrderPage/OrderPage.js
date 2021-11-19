@@ -35,6 +35,7 @@ const OrderPage = () => {
                 console.log(res);
             })
     }
+
     return (
         <Container>
             <h2 className="text-center fw-bold mt-5">Please fill out the necessary information</h2>

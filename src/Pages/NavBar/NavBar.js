@@ -46,6 +46,12 @@ const NavBar = () => {
                                 marginRight: "20px"
 
                             }}>Services</NavLink>
+                            <NavLink to="/reviews" style={{
+                                textDecoration: "none",
+                                color: "white",
+                                marginRight: "20px"
+
+                            }}>Reviews</NavLink>
                             <NavLink to="/about" style={{
                                 textDecoration: "none",
                                 color: "white",

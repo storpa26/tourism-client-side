@@ -6,7 +6,7 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const { isLoading } = useAuth();
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://aqueous-lake-21944.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])
@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = id => {
 
         window.confirm('Are you sure you want to cancel this order?');
-        fetch(`http://localhost:5000/orders}`, {
+        fetch(`https://aqueous-lake-21944.herokuapp.com/orders}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
